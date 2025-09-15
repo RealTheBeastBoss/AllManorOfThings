@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"soClubClementine",
+  "audioGroupId":{
+    "name":"Music",
+    "path":"audiogroups/Music",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":64.02612,
+  "name":"soClubClementine",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Sounds/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"soClubClementine.mp3",
+  "type":0,
+  "volume":1.0,
+}

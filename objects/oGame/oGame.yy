@@ -3,6 +3,8 @@
   "%Name":"oGame",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"oGame",
@@ -25,11 +27,16 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"next_room","filters":[],"listItems":[],"multiselect":false,"name":"next_room","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"TitleScreen","path":"rooms/TitleScreen/TitleScreen.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"TitleScreen","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"debug_time","filters":[],"listItems":[],"multiselect":false,"name":"debug_time","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"trans_opacity","filters":[],"listItems":[],"multiselect":false,"name":"trans_opacity","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"game_time","filters":[],"listItems":[],"multiselect":false,"name":"game_time","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":null,
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }
