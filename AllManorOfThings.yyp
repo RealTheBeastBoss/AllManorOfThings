@@ -4,6 +4,8 @@
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
     {"$GMAudioGroup":"","%Name":"Music","name":"Music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"Voice","name":"Voice","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"SFX","name":"SFX","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -40,7 +42,10 @@
     {"id":{"name":"MainFont","path":"fonts/MainFont/MainFont.yy",},},
     {"id":{"name":"oButton","path":"objects/oButton/oButton.yy",},},
     {"id":{"name":"oGame","path":"objects/oGame/oGame.yy",},},
+    {"id":{"name":"oSlider","path":"objects/oSlider/oSlider.yy",},},
     {"id":{"name":"CreditsScreen","path":"rooms/CreditsScreen/CreditsScreen.yy",},},
+    {"id":{"name":"GameSelect","path":"rooms/GameSelect/GameSelect.yy",},},
+    {"id":{"name":"IntroScene","path":"rooms/IntroScene/IntroScene.yy",},},
     {"id":{"name":"SettingsMenu","path":"rooms/SettingsMenu/SettingsMenu.yy",},},
     {"id":{"name":"SplashScreen","path":"rooms/SplashScreen/SplashScreen.yy",},},
     {"id":{"name":"TitleScreen","path":"rooms/TitleScreen/TitleScreen.yy",},},
@@ -51,6 +56,7 @@
     {"id":{"name":"sButton","path":"sprites/sButton/sButton.yy",},},
     {"id":{"name":"sButtonHover","path":"sprites/sButtonHover/sButtonHover.yy",},},
     {"id":{"name":"SplashLogo","path":"sprites/SplashLogo/SplashLogo.yy",},},
+    {"id":{"name":"sSlider","path":"sprites/sSlider/sSlider.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
@@ -59,6 +65,8 @@
     {"roomId":{"name":"TitleScreen","path":"rooms/TitleScreen/TitleScreen.yy",},},
     {"roomId":{"name":"SettingsMenu","path":"rooms/SettingsMenu/SettingsMenu.yy",},},
     {"roomId":{"name":"CreditsScreen","path":"rooms/CreditsScreen/CreditsScreen.yy",},},
+    {"roomId":{"name":"GameSelect","path":"rooms/GameSelect/GameSelect.yy",},},
+    {"roomId":{"name":"IntroScene","path":"rooms/IntroScene/IntroScene.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

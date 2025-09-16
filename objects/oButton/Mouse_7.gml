@@ -20,6 +20,22 @@ switch (display_text) {
 			event_user(0);
 		}
 	break;
+	case "Play Game":
+		oGame.next_room = GameSelect;
+		with oGame {
+			event_user(0);
+		}
+	break;
+	case "New Game":
+		if oGame.skip_intro {
+			oGame.next_room = TitleScreen;
+		} else {
+			oGame.next_room = IntroScene;
+		}
+		with oGame {
+			event_user(0);
+		}
+	break;
 	case "General":
 		if oGame.debug_time {
 			layer_set_visible("Debug_On", true);
@@ -30,6 +46,11 @@ switch (display_text) {
 			layer_set_visible("Fullscreen_On", true);
 		} else {
 			layer_set_visible("Fullscreen_Off", true);
+		}
+		if oGame.skip_intro {
+			layer_set_visible("Skip_Yes", true);
+		} else {
+			layer_set_visible("Skip_No", true);
 		}
 		layer_set_visible("General_Assets", true);
 		layer_set_visible("Audio_Assets", false);
@@ -46,6 +67,8 @@ switch (display_text) {
 		layer_set_visible("Debug_Off", false);
 		layer_set_visible("Fullscreen_On", false);
 		layer_set_visible("Fullscreen_Off", false);
+		layer_set_visible("Skip_Yes", false);
+		layer_set_visible("Skip_No", false);
 		layer_set_visible("General_Assets", false);
 		layer_set_visible("Audio_Assets", true);
 		layer_set_visible("Controls_Assets", false);
@@ -61,6 +84,8 @@ switch (display_text) {
 		layer_set_visible("Debug_Off", false);
 		layer_set_visible("Fullscreen_On", false);
 		layer_set_visible("Fullscreen_Off", false);
+		layer_set_visible("Skip_Yes", false);
+		layer_set_visible("Skip_No", false);
 		layer_set_visible("General_Assets", false);
 		layer_set_visible("Audio_Assets", false);
 		layer_set_visible("Controls_Assets", true);
@@ -91,6 +116,17 @@ switch (display_text) {
 			layer_set_visible("Fullscreen_On", true);
 			layer_set_visible("Fullscreen_Off", false);
 			window_set_fullscreen(true);
+		}
+	break;
+	case "Skip Intro":
+		if oGame.skip_intro {
+			layer_set_visible("Skip_Yes", false);
+			layer_set_visible("Skip_No", true);
+			oGame.skip_intro = false;
+		} else {
+			layer_set_visible("Skip_Yes", true);
+			layer_set_visible("Skip_No", false);
+			oGame.skip_intro = true;
 		}
 	break;
 }

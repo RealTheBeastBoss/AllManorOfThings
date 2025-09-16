@@ -10,3 +10,7 @@ if window_get_fullscreen() {
 	layer_set_visible("Fullscreen_Off", false);
 	layer_set_visible("Fullscreen_On", true);
 }
+if oGame.skip_intro {
+	layer_set_visible("Skip_No", false);
+	layer_set_visible("Skip_Yes", true);
+}
