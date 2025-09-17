@@ -41,6 +41,7 @@
   "resources":[
     {"id":{"name":"MainFont","path":"fonts/MainFont/MainFont.yy",},},
     {"id":{"name":"oButton","path":"objects/oButton/oButton.yy",},},
+    {"id":{"name":"oDialogue","path":"objects/oDialogue/oDialogue.yy",},},
     {"id":{"name":"oGame","path":"objects/oGame/oGame.yy",},},
     {"id":{"name":"oSlider","path":"objects/oSlider/oSlider.yy",},},
     {"id":{"name":"CreditsScreen","path":"rooms/CreditsScreen/CreditsScreen.yy",},},

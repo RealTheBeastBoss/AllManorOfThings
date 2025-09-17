@@ -23,8 +23,17 @@ if debug_time {
 		"Current Room: " + room_get_name(room),
 		"Opacity: " + string(trans_opacity),
 		"Next Room: " + room_get_name(next_room),
+		"Save Game: " + string(save_game),
 		"Game Time: " + string(game_time)
 	];
+	if instance_exists(oDialogue) {
+		var debug_dialogue = [
+			"Dialogue Name: " + oDialogue.name,
+			"Dialogue Id: " + string(array_get_index(oDialogue.dialogue_tree, oDialogue.current_dialogue)),
+			"Showing Options: " + string(oDialogue.show_options)
+		];
+		debug_text = array_concat(debug_text, debug_dialogue);
+	}
 	var y_level = 0;
 	for (var i = 0; i < array_length(debug_text); i++;) {
 		draw_text(0, y_level, debug_text[i]);

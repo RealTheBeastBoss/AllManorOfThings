@@ -1,0 +1,1 @@
+oGame.alarm[0] = 60;

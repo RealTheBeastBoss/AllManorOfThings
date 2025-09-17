@@ -34,6 +34,16 @@ switch (display_text) {
 		}
 		with oGame {
 			event_user(0);
+			for (var i = 1; i <= 4; i++) {
+				if not file_exists("Game " + string(i) + ".tbb") {
+					save_game = i;
+					break;
+				}
+				if i == 4 {
+					trans_opacity = 0;
+					next_room = GameSelect;
+				}
+			}
 		}
 	break;
 	case "General":
