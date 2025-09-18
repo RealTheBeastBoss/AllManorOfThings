@@ -4,7 +4,6 @@ switch name {
 	case "Intro":
 		dialogue_tree = [
 			{
-				character_name: "Narrator",
 				text: [
 					"Ah, there's a player here.", 
 					"You must be here for Natalie, I think she's asleep still.", 
@@ -24,7 +23,6 @@ switch name {
 				options: 2
 			},
 			{
-				character_name: "Narrator",
 				text: [
 					"It's me again, I've got another player for you.",
 					"I hope they won't be as much trouble as the last one."
@@ -79,7 +77,6 @@ switch name {
 				]
 			},
 			{
-				character_name: "Narrator",
 				text: [
 					"It's fine, maybe they are just a bit shy.",
 					"Besides, I imagine you're quite excited right now."
@@ -126,7 +123,96 @@ switch name {
 			{
 				character_name: "Natalie Clementine",
 				text: [
-					""
+					"Oh, I mean obviously it is awful that someone died",
+					"it just means I've got something to do.",
+					"After all, I am a Hit Detective so let's find out",
+					"who's been hit."
+				],
+				length: 1,
+				options: 12
+			},
+			{
+				text: [
+					"You appear to be waiting by the bottom of the stairs",
+					"for Natalie to appear, which should give her time",
+					"to get dressed."
+				],
+				length: 1,
+				options: 13
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"Alright, I'm all dressed up.",
+					"Don't drool on the carpet, I'm out of cleaner."
+				],
+				length: 1,
+				options: [
+					["Mummy", 14],
+					["I'm looking respectfully", 15],
+					["I'm not interested", 16]
+				]
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"Honey, you've got some problems I'm simply",
+					"not equipped to deal with."
+				],
+				length: 1,
+				options: 17
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"Why thank you. You certainly know how to flatter a lady.",
+					"At least we've got something in common."
+				],
+				length: 1,
+				options: 17
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"Oh. That's fine too. I only dress nice for myself anyway.",
+					"It gives me something interesting to look at in the mirror."
+				],
+				length: 1,
+				options: 17
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"Anyway, I've just spotted a letter by the door.",
+					"It's got a very distinctive crest, let me go get it."
+				],
+				length: 1,
+				options: 18
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"The Letterby Estate? I haven't been there since I was 16,",
+					"Surely if something's wrong, they wouldn't call on me still.",
+					"I'd prefer if you let me read this in peace."
+				],
+				length: 1,
+				options: 19
+			},
+			{
+				character_name: "Lord Herman Letterby",
+				text: [
+					"Dearest Natalie,",
+					"I understand it has been quite some time since we last",
+					"had contact, and I fully understand your grievances."
+				],
+				length: 1,
+				options: 20
+			},
+			{
+				character_name: "Lord Herman Letterby",
+				text: [
+					"However, "
 				],
 				length: 1,
 				options: 0
@@ -136,3 +222,4 @@ switch name {
 }
 current_dialogue = dialogue_tree[0];
 alarm[0] = current_dialogue.length * 60;
+if struct_exists(current_dialogue, "voice_line") audio_play_sound(current_dialogue.voice_line, 1, false);

@@ -1,13 +1,20 @@
-var character_width = string_width(current_dialogue.character_name);
+var character_width = noone;
+if struct_exists(current_dialogue, "character_name") {
+	character_width = string_width(current_dialogue.character_name);
+	draw_rectangle(200, 423, character_width + 240, 490, false);
+}
 draw_rectangle(200, 500, 1080, 700, false);
-draw_rectangle(200, 423, character_width + 240, 490, false);
 draw_set_color(#343434);
 draw_rectangle(210, 510, 1070, 690, false);
-draw_rectangle(210, 433, character_width + 230, 480, false);
+if struct_exists(current_dialogue, "character_name") {
+	draw_rectangle(210, 433, character_width + 230, 480, false);
+}
 draw_set_color(c_white);
 // Draw Text
-draw_set_valign(fa_middle);
-draw_text(220, 458, current_dialogue.character_name);
+if struct_exists(current_dialogue, "character_name") {
+	draw_set_valign(fa_middle);
+	draw_text(220, 458, current_dialogue.character_name);
+}
 var y_level = 515;
 draw_set_valign(fa_top);
 for (var i = 0; i < array_length(current_dialogue.text); i++;) {
@@ -36,6 +43,7 @@ if show_options and array_length(options_boxes) == 0 {
 		} else {
 			current_dialogue = dialogue_tree[current_dialogue.options];
 			alarm[0] = current_dialogue.length * 60;
+			if struct_exists(current_dialogue, "voice_line") audio_play_sound(current_dialogue.voice_line, 1, false);
 			show_options = false;
 		}
 	}
@@ -63,6 +71,7 @@ if show_options and array_length(options_boxes) == 0 {
 			}
 			current_dialogue = dialogue_tree[option_box.dialogue];
 			alarm[0] = current_dialogue.length * 60;
+			if struct_exists(current_dialogue, "voice_line") audio_play_sound(current_dialogue.voice_line, 1, false);
 			show_options = false;
 			options_boxes = [];
 		}

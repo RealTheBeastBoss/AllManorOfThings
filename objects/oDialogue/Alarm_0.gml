@@ -3,6 +3,7 @@
 if struct_exists(current_dialogue, "interrupt") {
 	current_dialogue = dialogue_tree[current_dialogue.options];
 	alarm[0] = current_dialogue.length * 60;
+	if struct_exists(current_dialogue, "voice_line") audio_play_sound(current_dialogue.voice_line, 1, false);
 } else {
 	show_options = true;
 	if is_array(current_dialogue.options) {
