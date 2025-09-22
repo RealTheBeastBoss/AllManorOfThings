@@ -192,7 +192,7 @@ switch name {
 			{
 				character_name: "Natalie Clementine",
 				text: [
-					"The Letterby Estate? I haven't been there since I was 16,",
+					"The Letterby Estate? I haven't been there since I was 16.",
 					"Surely if something's wrong, they wouldn't call on me still.",
 					"I'd prefer if you let me read this in peace."
 				],
@@ -212,10 +212,130 @@ switch name {
 			{
 				character_name: "Lord Herman Letterby",
 				text: [
-					"However, "
+					"However, I find myself in urgent need of your help.",
+					"My dear boy Harry has been killed. I have locked down the",
+					"house and we are awaiting your arrival."
 				],
 				length: 1,
-				options: 0
+				options: 21
+			},
+			{
+				character_name: "Lord Herman Letterby",
+				text: [
+					"I am only legally allowed to hold everyone here until 5",
+					"o'clock tomorrow. I'll explain more when you get here.",
+					"Please hurry."
+				],
+				length: 1,
+				options: 22
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"Well that's gone horribly wrong. It wasn't supposed to",
+					"be someone I knew. This might be difficult."
+				],
+				length: 1,
+				options: [
+					["Sucks to be you", 23],
+					["Oh, I'm sorry", 24]
+				]
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"You really can't afford to antagonise yourself here.",
+					"Besides, I'm not going to be hearing from you until",
+					"I arrive at the Manor House. Goodbye."
+				],
+				length: 1,
+				options: 26,
+				leave_function: function() {
+					layer_background_blend(layer_background_get_id("Background"), c_black);
+				}
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"Yeah. It's not too bad, I haven't even seen him in years.",
+					"We used to be great friends but... that was the old me."
+				],
+				length: 1,
+				options: 25
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"Besides, I've got to get to the Manor House. If I leave now,",
+					"I can get there for 5pm. I'll meet back with you there",
+					"I guess."
+				],
+				length: 1,
+				options: 26,
+				leave_function: function() {
+					layer_background_blend(layer_background_get_id("Background"), c_black);
+				}
+			},
+			{
+				text: [
+					"I took the liberty of skipping you ahead to when",
+					"Natalie arrived at the Letterby Manor House at 5pm."
+				],
+				length: 1,
+				options: 27
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"Well, it seems to me there was a surprise party",
+					"about to happen. There could be some wrong-uns that",
+					"turned up to this."
+				],
+				length: 1,
+				options: [
+					["Wrong-uns?", 28],
+					["...", 30]
+				]
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"The Letterby Estate has some pretty strong ties to my",
+					"family, which always means the worst. I'm not about to",
+					"take you through my life story."
+				],
+				length: 1,
+				options: [
+					["Family?", 29],
+					["...", 30]
+				]
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"Can we please save the incessant questioning for the suspects?",
+					"That being said, I should ask to borrow Lady Fashion's lipstick",
+					"as I'm afraid I spent too much of mine kissing the mirror."
+				],
+				length: 1,
+				options: 30
+			},
+			{
+				character_name: "Natalie Clementine",
+				text: [
+					"Oh! I nearly forgot. After last time, I've learned that other",
+					"people can't hear players so if there's anything pertinent",
+					"you want me to say, just whisper it in my ear and I may just",
+					"feel compelled to do so. Well, here goes nothing."
+				],
+				length: 1,
+				options: 0,
+				leave_function: function() {
+					oGame.next_room = TheManor;
+					with oGame {
+						event_user(0);
+					}
+				}
 			}
 		];
 	break;

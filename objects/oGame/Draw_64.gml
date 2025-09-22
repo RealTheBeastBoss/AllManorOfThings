@@ -17,15 +17,34 @@ if trans_opacity > 0 {
 	}
 }
 
+// Game UI
+if room == TheManor {
+	// Draw White Borders
+	draw_rectangle(1060, 20, 1260, 147, false);
+	// Draw Grey Backgrounds
+	draw_set_color(#343434);
+	draw_rectangle(1070, 30, 1250, 137, false);
+	draw_set_color(c_white);
+	// Draw Text
+	draw_set_halign(fa_center);
+	draw_text(1160, 40, "Thursday");
+	draw_text(1160, 90, "5:00pm");
+	draw_set_halign(fa_left);
+}
+
 // Debug Text
 if debug_time {
 	var debug_text = [
 		"Current Room: " + room_get_name(room),
-		"Opacity: " + string(trans_opacity),
-		"Next Room: " + room_get_name(next_room),
 		"Save Game: " + string(save_game),
 		"Game Time: " + string(game_time)
 	];
+	if room == TheManor {
+		var debug_manor = [
+			"Camera Position: (" + string(camera_get_view_x(view_camera[0])) + ", " + string(camera_get_view_y(view_camera[0])) + ")"
+		];
+		debug_text = array_concat(debug_text, debug_manor);
+	}
 	if instance_exists(oDialogue) {
 		var debug_dialogue = [
 			"Dialogue Name: " + oDialogue.name,

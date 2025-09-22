@@ -28,7 +28,7 @@ switch (display_text) {
 	break;
 	case "New Game":
 		if oGame.skip_intro {
-			oGame.next_room = TitleScreen;
+			oGame.next_room = TheManor;
 		} else {
 			oGame.next_room = IntroScene;
 		}
